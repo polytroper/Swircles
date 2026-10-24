@@ -1,0 +1,24 @@
+{
+  "ver": "0.1",
+  "info": {
+    "id": "",
+    "name": "My first shader",
+    "description": "",
+    "tags": []
+  },
+  "renderpass": [
+    {
+      "inputs": [],
+      "outputs": [
+        {
+          "id": "4dfGRr",
+          "channel": 0
+        }
+      ],
+      "code": "// Shadergator first shader practice\nvoid mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec3 paint = vec3(0.0, 1, 1);\n    fragColor = vec4(paint, 1.0);\n}\n",
+      "name": "Image",
+      "description": "",
+      "type": "image"
+    }
+  ]
+}
