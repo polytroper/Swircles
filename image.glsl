@@ -12,7 +12,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec2 uvp = mod(uvWave/tileSize*aspect2, 1.0);
 
     vec2 point = (uvp-center);
-    float circle = 1.0 - mod((length(point)+t/8.0)*2.0, 0.5);
+    float circle = round(mod((length(point)+t/8.0)*2.0, 0.5)*1.5);
     
     vec2 uvr = mod(abs(uvp*2.0-1.0), 1.0);
     float rect = round(max(uvr.x, uvr.y)-0.4);
