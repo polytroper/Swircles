@@ -15,7 +15,7 @@
           "channel": 0
         }
       ],
-      "code": "// Shadergator first shader practice\nvoid mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec3 paint = vec3(0.0, 1, 1);\n    fragColor = vec4(paint, 1.0);\n}\n",
+      "code": "// Shadergator first shader practice\nvoid mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec2 point = (uv-0.5) \n    vec2 uv = fragCoord / iResolution.xy;\n    fragColor = vec4(uv.x, uv.y, 0.5, 1.0);\n}\n",
       "name": "Image",
       "description": "",
       "type": "image"
