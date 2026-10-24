@@ -15,7 +15,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     float m = 0.5+0.2*((sin((a)*4.0+(t+uv.x*5.0+uv.y*2.0))+1.0)/2.0);
 
     vec2 point = (uvp-center);
-    float circle = round(mod(sin(m+uv.x*uvp.y)+(length(point)+t/8.0)*2.0, 0.5)*1.5);
+    float circle = round(mod(sin(m+uv.x+uvp.y)+(length(point)+sin(t+uv.y/2+uvp.x*3)/8.0)*2.0, 0.5)*1.5);
     
     vec2 uvr = mod(abs(uvp*2.0-1.0), 1.0);
     float rect = round(max(uvr.x, uvr.y)-0.4);
