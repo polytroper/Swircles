@@ -22,6 +22,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     float mixed = max(circle, rect);
     fragColor = vec4(paint*circle, 1.0);
-    fragColor = vec4(uvp*mixed, 0, 0);
+    fragColor = vec4((vec3(uvp, 0)+vec3(sin(t)*2.0/1.0, uv))*mixed, 0);
     // fragColor = vec4(mixed);
 }
