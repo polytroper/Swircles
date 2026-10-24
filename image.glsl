@@ -13,8 +13,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     vec2 point = (uvp-center);
     float circle = 1.0 - smoothstep(0.24, 0.25, mod(length(point)+t/4.0, 0.4));
-    float rectX = mod(abs(uvp.x*2.0-1.0), 1.0);
-    float rectY = mod(abs(uvp.x*2.0-1.0), 1.0);
+    vec2 uvr = mod(abs(uvp*2.0-1.0), 1.0);
+    float rect = max(uvr.x, uvr.y);
+    fl
     fragColor = vec4(paint*circle, 1.0);
     // fragColor = vec4(uvp, 0, 0);
     fragColor = vec4(rect);
