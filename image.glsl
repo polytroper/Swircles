@@ -10,6 +10,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     
     vec2 uvWave = uv+vec2(sin(t-uv.y)/2.0, sin(t-uv.x)/2.0);
     vec2 uvp = mod(uvWave/tileSize*aspect2, 1.0);
+    vec2 uvc = uvp*2.0-vec2(1.0);
+    float a = atan()
 
     vec2 point = (uvp-center);
     float circle = round(mod((length(point)+t/8.0)*2.0, 0.5)*1.5);
