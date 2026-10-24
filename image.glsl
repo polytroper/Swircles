@@ -9,10 +9,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec2 tileSize = vec2(0.2, 0.2);
     
     vec2 uvp = mod(uv/tileSize*aspect2, 1.0);
-    // center += vec2(0, sin(t-10.0*center.x));
+    uvp += vec2(0, sin(t-10.0*center.x));
 
     vec2 point = (uvp-center);
     float circle = 1.0 - smoothstep(0.24, 0.25, length(point));
-    fragColor = vec4(paint*circle, 1.0);
-    // fragColor = vec4(uvp, 0, 0);
+    // fragColor = vec4(paint*circle, 1.0);
+    fragColor = vec4(uvp, 0, 0);
 }
