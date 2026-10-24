@@ -12,7 +12,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     vec2 uvp = mod(uvWave/tileSize*aspect2, 1.0);
     vec2 uvc = uvp*2.0-vec2(1.0);
     float a = atan(uvc.x, uvc.y);
-    float m = 0.5+0.2*(sin(a*4.0)+1.0)/2.0;
+    float m = 0.5+0.2*((sin(a*4.0+(t+uv.x*5.0+uv.y*2.0))+1.0)/2.0);
 
     vec2 point = (uvp-center);
     float circle = round(mod(m+(length(point)+t/8.0)*2.0, 0.5)*1.5);
@@ -22,6 +22,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     float mixed = max(circle, rect);
     fragColor = vec4(paint*circle, 1.0);
-    // fragColor = vec4(uvp, 0, 0);
-    fragColor = vec4(mixed);
+    fragColor = vec4(uvp*mixed, 0, 0);
+    // fragColor = vec4(mixed);
 }
